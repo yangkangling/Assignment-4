@@ -127,13 +127,10 @@ class UDPClient:
             self.socket.close()
 
 if __name__ == "__main__":
+
     if len(sys.argv) != 4:
         print("Usage: python UDPclient.py <server_host> <server_port> <file_list>")
         sys.exit(1)
     
     client = UDPClient(sys.argv[1], int(sys.argv[2]), sys.argv[3])
     client.run()
-
-
-
-
