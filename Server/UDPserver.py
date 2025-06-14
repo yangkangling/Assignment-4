@@ -83,6 +83,7 @@ class UDPServer:
             print(f"Closed data channel for {filename}")
 
 if __name__ == "__main__":
+    # Validate command line arguments before starting server
     import sys
     if len(sys.argv) != 2:
         print("Usage: python UDPserver.py <port>")
