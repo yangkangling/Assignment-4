@@ -32,7 +32,7 @@ class UDPServer:
                     file_size = os.path.getsize(filename)
                     data_port = random.randint(50000, 51000)
                     
-                    # Start new thread for file transfer
+                    # Spin up a new thread for file transfer to avoid blocking main server
                     threading.Thread(
                         target=self.handle_file_transfer,
                         args=(filename, client_addr, data_port, file_size)
