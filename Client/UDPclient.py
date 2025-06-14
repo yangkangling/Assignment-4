@@ -13,6 +13,7 @@ class UDPClient:
         self.max_retries = 5
 
     def send_and_receive(self, message, address, timeout=None):
+        #Send a message and wait for response with retry mechanism
         retries = 0
         current_timeout = timeout or self.socket.gettimeout()
         
