@@ -84,6 +84,7 @@ class UDPClient:
                         print("Invalid chunk response")
                         return False
                         
+                    # Response format: "FILE <filename> OK DATA <base64_data>"    
                     # Extract and decode data
                     data_start = chunk_response.find("DATA") + 5
                     encoded_data = chunk_response[data_start:]
