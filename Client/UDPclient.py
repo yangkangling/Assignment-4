@@ -13,7 +13,7 @@ class UDPClient:
         self.max_retries = 5
 
     def send_and_receive(self, message, address, timeout=None):
-        #Send a message and wait for response with retry mechanism
+        # Send a message and wait for response with retry mechanism
         retries = 0
         current_timeout = timeout or self.socket.gettimeout()
         
@@ -35,7 +35,7 @@ class UDPClient:
 
     def download_file(self, filename):
         print(f"\nRequesting file: {filename}")
-        
+        # Download a file from server using UDP protocol
         # Step 1: Send DOWNLOAD request
         response = self.send_and_receive(
             f"DOWNLOAD {filename}",
